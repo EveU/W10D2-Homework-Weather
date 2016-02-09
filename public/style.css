@@ -1,0 +1,17 @@
+body {
+  background: url('http://i4.mirror.co.uk/incoming/article4064515.ece/ALTERNATES/s615/Weather-Map-UK-17th-Aug.jpg');
+  background-size: cover;
+}
+
+#cityWeather {
+  width: 18%;
+  margin: 30px 10px;
+  padding: 5px 20px;
+  background-color: #d7e1b9;
+  border-radius: 10px;
+}
+
+#cityWeather img {
+  width: 60%;
+  padding: 0;
+}

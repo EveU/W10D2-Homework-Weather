@@ -38,7 +38,7 @@ window.onload = function(){
 
       var weather = currentCity.weather;
       var temperatures = currentCity.temperatures;
-      var weatherDisplay = "<h4>"+city+"</h4><p>" + day + " " + time + ":00</p><hr><p>"  + weather.main + "</p><img src=http://openweathermap.org/img/w/" + weather.icon + ".png><p>" + temperatures.temp + "°C<p>";
+      var weatherDisplay = "<h4>"+city+"</h4><p>" + day + " " + time + ":00</p><hr><p>"  + weather.main + "</p><img src=http://openweathermap.org/img/w/" + weather.icon + ".png><p>Temperature:  " + temperatures.temp + "°C<p>";
       weatherView.innerHTML = weatherDisplay;
     });
   }

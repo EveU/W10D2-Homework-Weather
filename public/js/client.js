@@ -30,8 +30,15 @@ window.onload = function(){
     var currentCity = new City(city);
 
     currentCity.get(function(){
+      var today = new Date();  
+      var d = today.getDay();  
+      var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+      var day = daylist[d];
+      var time = today.getHours();
+
       var weather = currentCity.weather;
-      var weatherDisplay = "<h4>"+city+"</h4><img src=http://openweathermap.org/img/w/" + weather.icon + ".png>" + weather.main;
+      var temperatures = currentCity.temperatures;
+      var weatherDisplay = "<h4>"+city+"</h4><p>" + day + " " + time + ":00</p><hr><p>"  + weather.main + "</p><img src=http://openweathermap.org/img/w/" + weather.icon + ".png><p>" + temperatures.temp + "°C<p>";
       weatherView.innerHTML = weatherDisplay;
     });
   }

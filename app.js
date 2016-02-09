@@ -1,12 +1,20 @@
 var express = require('express');
 var app = express();
 var http = require('http');
+var expressLayouts = require('express-ejs-layouts');
 
-app.get('/reports', function(req, res){
-  res.send('test');
+app.set('views', './views');
+app.set('view engine', 'ejs');
+
+app.use(expressLayouts);
+app.use(express.static('public'));
+
+
+app.get('/weather', function(req, res){
+  res.render('weather');
 });
 
-app.get('/reports/:city', function(request, response){
+app.get('/weather/:city', function(request, response){
   http.get('http://api.openweathermap.org/data/2.5/weather?q=' + request.params.city + '&appid=d18f001d3d186e0d5d7677ca7f09527e', function(res){
     
     var body = '';

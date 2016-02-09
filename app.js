@@ -24,9 +24,8 @@ app.get('/weather/:city', function(request, response){
     });
 
     res.on('end', function(){
-      console.log(body);
       var report = JSON.parse(body);
-      response.send(report['weather'][0]);
+      response.send(report);
     });
 
   });
